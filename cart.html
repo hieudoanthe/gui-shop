@@ -144,8 +144,8 @@
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="" class="nav-item nav-link">Login</a>
-                            <a href="" class="nav-item nav-link">Register</a>
+                            <a href="./sign.html" class="nav-item nav-link">Login</a>
+                            <a href="./sign.html" class="nav-item nav-link">Register</a>
                         </div>
                     </div>
                 </nav>
@@ -184,110 +184,153 @@
                         </tr>
                     </thead>
                     <tbody class="align-middle">
-                        <tr>
-                            <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                            <td class="align-middle">$150</td>
+                        <tr id="product-1">
+                            <td style="text-align: left;" class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"> 2023
+                                new long-sleeved shirts</td>
+                            <td class="align-middle">$130</td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
+                                        <button class="btn btn-sm btn-primary btn-minus" onclick="decrementQuantity('product-1')">
+                                            <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
+                                    <input id="product-1-quantity" type="text" class="form-control form-control-sm bg-secondary text-center"
+                                        value="1">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
+                                        <button class="btn btn-sm btn-primary btn-plus" onclick="incrementQuantity('product-1')">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle" id="product-1-total">$130</td>
+                            <td class="align-middle"><button onclick="removeProduct('product-1')" class="btn btn-sm btn-primary"><i
+                                        class="fa fa-times"></i></button></td>
                         </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-2.jpg" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                            <td class="align-middle">$150</td>
+                        <!-- <script>
+                            // Khai báo biến để lưu số lượng và giá sản phẩm
+                            var quantity = 1;
+                            var price = 130; // Giá sản phẩm
+
+                            // Hàm tăng số lượng
+                            function incrementQuantity(productId) {
+                                // Tìm phần tử input có giá trị số lượng
+                                var quantityInput = document.querySelector("#" + productId + "-quantity");
+
+                                // Tăng số lượng
+                                quantity++;
+
+                                // Cập nhật giá trị số lượng trên trang
+                                quantityInput.value = quantity;
+
+                                // Cập nhật tổng cộng sản phẩm cụ thể
+                                var totalPrice = quantity * price;
+                                document.querySelector("#" + productId + "-total").textContent = "$" + totalPrice;
+                            }
+                            // Hàm giảm số lượng
+                                function decrementQuantity(productId) {
+                                    // Tìm phần tử input có giá trị số lượng
+                                    var quantityInput = document.querySelector("#" + productId + "-quantity");
+
+                                    // Giảm số lượng nếu số lượng lớn hơn 1
+                                    if (quantity > 1) {
+                                        quantity--;
+                                        quantityInput.value = quantity;
+
+                                        // Cập nhật tổng cộng sản phẩm cụ thể
+                                        var totalPrice = quantity * price;
+                                        document.querySelector("#" + productId + "-total").textContent = "$" + totalPrice;
+                                    }
+                                }
+
+                        </script> -->
+                        <tr id="product-2">
+                            <td style="text-align: left;" class="align-middle"><img src="img/product-2.jpg" alt="" style="width: 50px;">
+                                Heavyweight hooded sweatshirt</td>
+                            <td class="align-middle">$135</td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
+                                        <button class="btn btn-sm btn-primary btn-minus" onclick="decrementQuantity('product-2')">
+                                            <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
+                                    <input id="product-2-quantity" type="text" class="form-control form-control-sm bg-secondary text-center"
+                                        value="1">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
+                                        <button class="btn btn-sm btn-primary btn-plus" onclick="incrementQuantity('product-2')">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle" id="product-2-total">$135</td>
+                            <td class="align-middle"><button onclick="removeProduct('product-2')" class="btn btn-sm btn-primary"><i
+                                        class="fa fa-times"></i></button></td>
                         </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-3.jpg" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                            <td class="align-middle">$150</td>
+                        <tr id="product-3">
+                            <td style="text-align: left;" class="align-middle"><img src="img/product-3.jpg" alt="" style="width: 50px;"> Long-sleeved T-shirts</td>
+                            <td class="align-middle">$120</td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
+                                        <button class="btn btn-sm btn-primary btn-minus" onclick="decrementQuantity('product-3')">
                                         <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
+                                    <input id="product-3-quantity" type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
+                                        <button class="btn btn-sm btn-primary btn-plus" onclick="incrementQuantity('product-3')">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle" id="product-3-total">$120</td>
+                            <td class="align-middle"><button onclick="removeProduct('product-3')" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
                         </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-4.jpg" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                            <td class="align-middle">$150</td>
+                        <tr id="product-4">
+                            <td style="text-align: left;" class="align-middle"><img src="img/product-4.jpg" alt="" style="width: 50px;"> Striped shirt men's</td>
+                            <td class="align-middle">$25</td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
+                                        <button class="btn btn-sm btn-primary btn-minus" onclick="decrementQuantity('product-4')">
                                         <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
+                                    <input id="product-4-quantity" type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
+                                        <button class="btn btn-sm btn-primary btn-plus" onclick="incrementQuantity('product-4')">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle" id="product-4-total">$25</td>
+                            <td class="align-middle"><button onclick="removeProduct('product-4')" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
                         </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-5.jpg" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                            <td class="align-middle">$150</td>
+                        <tr id="product-5">
+                            <td style="text-align: left;" class="align-middle"><img src="img/product-5.jpg" alt="" style="width: 50px;"> Men's Korean Plaid Shirt</td>
+                            <td class="align-middle">$123</td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
+                                        <button class="btn btn-sm btn-primary btn-minus" onclick="decrementQuantity('product-5')">
                                         <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
+                                    <input id="product-5-quantity" type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
+                                        <button class="btn btn-sm btn-primary btn-plus" onclick="incrementQuantity('product-5')">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle" id="product-5-total">$123</td>
+                            <td class="align-middle"><button onclick="removeProduct('product-5')" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -407,15 +450,11 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
+    <script src="js/easing.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.js"></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/total_rm.js"></script>
 </body>
 
 </html>
