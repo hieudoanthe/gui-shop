@@ -14,6 +14,8 @@ var products = {
     "product-5": { quantity: 1, price: 123 },
 };
 
+
+
 // Hàm tăng số lượng
 function incrementQuantity(productId) {
     var product = products[productId];
